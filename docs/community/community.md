@@ -87,7 +87,7 @@ chance it will be incorporated into future releases.
 
 ## Release Procedure
 
-The full release process — repository matrix, branching strategy, RC generation, SVN staging, voting, and publication — is documented in the [Release Procedure](/community/release-procedure) page.
+The full release process — repository matrix, branching strategy, RC generation, SVN staging, voting, and publication — is documented in the [Release Procedure](/community/devs/release-procedure) page.
 
 ## Source code
 
