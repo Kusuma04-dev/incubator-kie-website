@@ -50,12 +50,12 @@ Skip this step for patch releases (`10.3.1`, `10.3.2`, etc.).
 
 ### 1.1 Create Jenkins folders
 
-In Jenkins, create the stream folder (e.g. [`10.3.x+ stream`](https://ci-builds.apache.org/job/KIE/job/10.3.x+%20stream/)) by copying the jobs from `main`.
+In Jenkins, create the stream folder (e.g. [`10.3.x+stream`](https://ci-builds.apache.org/job/KIE/job/10.3.x+stream/)) by copying the jobs from `main`.
 
 ### 1.2 Build CI images
 
-- **`incubator-kie`**: Trigger [`kie-ci-image-build`](https://ci-builds.apache.org/job/KIE/job/10.3.x+%20stream/job/10.3.x/job/kie-ci-image-build/) with `IMAGE_TAG={STREAM_NAME}-latest` (e.g. `10.3.x-latest`). Verify the tag on [Docker Hub](https://hub.docker.com/r/apache/incubator-kie-kogito-ci-build/tags).
-- **`incubator-kie-tools`**: If `.ci/incubator-kie-tools-ci-build.Dockerfile` changed on `main`, trigger [`kie-tools-ci-image-build`](https://ci-builds.apache.org/job/KIE/job/10.3.x+%20stream/job/10.3.x/job/kie-tools-ci-image-build/) with `IMAGE_TAG=main`.
+- **`incubator-kie`**: Trigger [`kie-ci-image-build`](https://ci-builds.apache.org/job/KIE/job/10.3.x+stream/job/10.3.x/job/kie-ci-image-build/) with `IMAGE_TAG={STREAM_NAME}-latest` (e.g. `10.3.x-latest`). Verify the tag on [Docker Hub](https://hub.docker.com/r/apache/incubator-kie-kogito-ci-build/tags).
+- **`incubator-kie-tools`**: If `.ci/incubator-kie-tools-ci-build.Dockerfile` changed on `main`, trigger [`kie-tools-ci-image-build`](https://ci-builds.apache.org/job/KIE/job/10.3.x+stream/job/10.3.x/job/kie-tools-ci-image-build/) with `IMAGE_TAG=main`.
 
 ---
 
@@ -83,7 +83,7 @@ CREATE_STREAM_BRANCH=false
 
 ### 2.1 Run `incubator-kie` release candidate
 
-Trigger [`apache/incubator-kie :: release-candidate`](https://ci-builds.apache.org/job/KIE/job/10.3.x+%20stream/job/10.3.x/job/kie-release-candidate/) with the parameters above.
+Trigger [`apache/incubator-kie :: release-candidate`](https://ci-builds.apache.org/job/KIE/job/10.3.x+stream/job/10.3.x/job/kie-release-candidate/) with the parameters above.
 
 #### After completion
 
@@ -97,7 +97,7 @@ Trigger [`apache/incubator-kie :: release-candidate`](https://ci-builds.apache.o
 
 ### 2.2 Run `incubator-kie-tools` release candidate
 
-Trigger [`apache/incubator-kie-tools :: release-candidate`](https://ci-builds.apache.org/job/KIE/job/10.3.x+%20stream/job/10.3.x/job/kie-tools-release-candidate/) with the parameters above.
+Trigger [`apache/incubator-kie-tools :: release-candidate`](https://ci-builds.apache.org/job/KIE/job/10.3.x+stream/job/10.3.x/job/kie-tools-release-candidate/) with the parameters above.
 
 Artifacts and their `.asc` signatures and `.sha512` checksums are uploaded to [Apache SVN Dev Dist](https://dist.apache.org/repos/dist/dev/incubator/kie/):
 
@@ -204,7 +204,7 @@ Run promotion jobs only after the IPMC vote passes.
 
 ### 4.1 Promote `incubator-kie`
 
-Trigger [`apache/incubator-kie :: release-promote`](https://ci-builds.apache.org/job/KIE/job/10.3.x+%20stream/job/10.3.x/job/kie-release-promote/) with:
+Trigger [`apache/incubator-kie :: release-promote`](https://ci-builds.apache.org/job/KIE/job/10.3.x+stream/job/10.3.x/job/kie-release-promote/) with:
 
 ```text
 PROJECT_VERSION=10.3.0
@@ -216,7 +216,7 @@ BUILD_BRANCH_NAME=10.3.x
 
 ### 4.2 Promote `incubator-kie-tools`
 
-Trigger [`apache/incubator-kie-tools :: release-promote`](https://ci-builds.apache.org/job/KIE/job/10.3.x+%20stream/job/10.3.x/job/kie-tools-release-promote/) with:
+Trigger [`apache/incubator-kie-tools :: release-promote`](https://ci-builds.apache.org/job/KIE/job/10.3.x+stream/job/10.3.x/job/kie-tools-release-promote/) with:
 
 ```text
 RELEASE_VERSION=10.3.0
@@ -250,7 +250,7 @@ Artifacts will sync to [Maven Central](https://central.sonatype.com/search?q=org
 
 ### 5.2 Publish KIE Tools artifacts
 
-Trigger [`apache/incubator-kie-tools :: release-publish`](https://ci-builds.apache.org/job/KIE/job/10.3.x+%20stream/job/10.3.x/job/kie-tools-release-publish/) with:
+Trigger [`apache/incubator-kie-tools :: release-publish`](https://ci-builds.apache.org/job/KIE/job/10.3.x+stream/job/10.3.x/job/kie-tools-release-publish/) with:
 
 ```text
 BASE_REF=10.3.0-rc1
